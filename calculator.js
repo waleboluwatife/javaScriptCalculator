@@ -1,25 +1,38 @@
 // program for a simple calculator
 
-// take the operator input
-const operator = prompt('Enter operator ( either +, -, * or / ): ');
-
-// take the operand input
-const number1 = parseFloat(prompt('Enter first number: '));
-const number2 = parseFloat(prompt('Enter second number: '));
-
+function calculator(){
+ // take the operator input
+ let operator = prompt("Enter Operator(e.g + / - or *): ");
+ // take the firstNumber input
+ let firstNumber = parseFloat(prompt("Enter First Number: "));
+  // take the secondNumber input
+ let secondNumber = parseFloat(prompt("Enter Second Number: "));
+      
+ let result = null;
+    
 // using if...else if... else
-    if (operator == '+') {
-        result = number1 + number2;
-    }
-    else if (operator == '-') {
-        result = number1 - number2;
-    }
-    else if (operator == '*') {
-        result = number1 * number2;
-    }
-    else {
-        result = number1 / number2;
-    }
+if (isNaN(firstNumber) || isNaN(secondNumber)){
+      alert("Invalid Input")
+      calculator();
+   }
+   else{
+      if (operator == '+'){
+            result = firstNumber + secondNumber;
+      }
+      else if(operator == '/'){
+            result = firstNumber / secondNumber;
+      }
+      else if(operator == '-'){
+            result = firstNumber - secondNumber;
+      }
+      else if(operator == '*'){
+       result = firstNumber * secondNumber;
+      }
+       
+       // display the result
+       alert('Result is ' + result);
+   }
+   
+}
 
-// display the result
-alert(`${number1} ${operator} ${number2} = ${result}`);
+calculator();
